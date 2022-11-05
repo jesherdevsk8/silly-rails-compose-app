@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:5.7
+    command: --sql_mode=""
+    volumes:
+      - dbdata:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=KDglu#oKy8X1DT
+
+  app:
+    build: .
+    volumes:
+      - ./:/app
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+
+volumes:
+  dbdata:
