@@ -59,8 +59,17 @@ docker-compose run app rails db:create
 
 docker-compose up
 ```
+**10. Create scaffold**
+```
+docker-compose run app rails g scaffold Category name
 
-**12. Browse http://localhost:3002**
-![Ruby on rails 7.0.4 docker with mysql](https://i.ibb.co/xJXVpLg/rails-compose.png)
+docker-compose run app rails g scaffold Post title description:text category:references
+
+docker-compose run app bin/rails db:migrate RAILS_ENV=development
+
+```
+
+**13. Browse http://localhost:3002**
+![Ruby on rails 7.0.4 docker with mysql]()
 
 _*See docker documentation https://github.com/docker/awesome-compose/tree/master/official-documentation-samples/rails*_
