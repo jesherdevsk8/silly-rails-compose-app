@@ -67,9 +67,11 @@ docker-compose run app rails g scaffold Post title description:text category:ref
 
 docker-compose run app bin/rails db:migrate RAILS_ENV=development
 
+docker-compose exec app rails test
+
 ```
 
-**13. Browse http://localhost:3002**
-![Ruby on rails 7.0.4 docker with mysql]()
+**13. Browse http://localhost:3000**
+![Ruby on rails 7.0.4 docker with mysql](https://i.ibb.co/DfGvGMg/silly-rails-compose.png)
 
 _*See docker documentation https://github.com/docker/awesome-compose/tree/master/official-documentation-samples/rails*_
